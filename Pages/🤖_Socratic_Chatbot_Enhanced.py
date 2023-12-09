@@ -24,7 +24,7 @@ import helper
 
 index_name = 'langchain-retrieval-agent-002'
 pinecone.init(
-    api_key="9751daec-0359-4afc-80a8-c1c0d9179cc1",
+    api_key=st.secrets("pinecone_api_key"),
     environment="asia-southeast1-gcp-free"
 )
 
@@ -42,7 +42,7 @@ text_field = "text"
 index = pinecone.Index(index_name)
 
 model_name = 'text-embedding-ada-002'
-os.environ["OpenAI_API_KEY"] = "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"
+os.environ["OpenAI_API_KEY"] = st.secrets["openai_api_key"]
 embed = OpenAIEmbeddings(
     model=model_name,
     openai_api_key=os.environ["OpenAI_API_KEY"]

@@ -13,7 +13,7 @@ from streamlit import session_state
 
 
 pdf_folder_path = "dataset/Giga"
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = st.secrets["openai_api_key"]
 
 def process_pdf_documents(pdf_folder_path: str):
     documents = []
